@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block header %}
+  <h1>{% block title %}Image Recognition{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<h1>الفيديو</h1>
+<form method="post" enctype="multipart/form-data" action="/excute">
+  <div>
+    <label for="image">اختر صورة</label>
+    <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png">
+  </div>
+</form>
+<button type="button" class="btn btn-warning" onclick="load('/excute',fn)">معالجة</button>
+
+<img id="results" src="" alt="">
+{% endblock %}

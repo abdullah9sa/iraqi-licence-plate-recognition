@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    {% if title %}
+    {{ title }}
+    {% else %}
+    Lic. plate Detection
+    {% endif %}
+  </title>
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    /* The side navigation menu */
+    .sidebar {
+      margin: 0;
+      padding: 2%;
+      width: 20%;
+      background-color: #161616;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+      right: 0;
+    }
+
+    .loader {
+      border: 16px solid #1b1b1b;
+      /* Light grey */
+      border-top: 16px solid #ffae00;
+      /* Blue */
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 1s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .icn {
+      display: flex;
+
+    }
+
+    /* Sidebar links */
+    .sidebar a {
+      display: block;
+      color: rgb(255, 255, 255);
+      padding: 16px;
+      text-decoration: none;
+    }
+
+    /* Active/current link */
+    .sidebar a.active {
+      background-color: #ffae00;
+      color: white;
+    }
+
+    .ressults{
+      object-fit: cover;
+    }
+
+    /* Links on mouse-over */
+    .sidebar a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
+
+    /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+    div.content {
+      margin-right: 20%;
+      padding: 3%;
+      height: 1000px;
+    }
+
+    .hid {
+      display: none;
+    }
+
+    /* On screens that are less than 700px wide, make the sidebar into a topbar */
+    @media screen and (max-width: 700px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      .sidebar a {
+        float: right;
+      }
+
+      div.content {
+        margin-right: 0;
+      }
+
+      .icn {
+        display: none;
+      }
+
+      .main {
+        padding-right: 0%;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .sidebar a {
+        text-align: center;
+        float: none;
+      }
+    }
+  </style>
+  <!-- <style>
+    /* The sidebar menu */
+    .sidenav {
+      height: 100%;
+      /* Full-height: remove this if you want "auto" height */
+      width: 20%;
+      /* Set the width of the sidebar */
+      position: fixed;
+      /* Fixed Sidebar (stay in place on scroll) */
+      z-index: 1;
+      /* Stay on top */
+      top: 0;
+      /* Stay at the top */
+      right: 0;
+      background-color: #111;
+      /* Black */
+      overflow-x: hidden;
+      /* Disable horizontal scroll */
+      padding-top: 10%;
+      padding-right: 20px;
+    }
+
+    /* The navigation menu links */
+    .sidenav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+    }
+
+    /* When you mouse over the navigation links, change their color */
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    /* Style page content */
+    .main {
+      margin-left: 160px;
+      /* Same as the width of the sidebar */
+      padding: 0px 10px;
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+
+    .active{
+      color: white;
+    }
+  </style> -->
+</head>
+
+<body style="background-color: rgb(240, 240, 240);">
+  <div class="sidebar" dir="rtl">
+    <div class="container">
+      <div class="row icn">
+        <div class="col-sm">
+          <img src="/static/uni.png" alt="university of Mosul" width="100px">
+        </div>
+        <div class="col-sm">
+          <img src="/static/engineering.png" alt="university of Mosul" width="100px">
+        </div>
+
+      </div>
+    </div>
+    <!-- <img src="/static/uni.png" alt="university of Mosul" width="50%">
+    <img src="/static/engineering.png" alt="university of Mosul" width="50%"> -->
+    <br>
+    <a class="{% if title == 'Image Rec.' %}active{% else %}{% endif %}" href="/" id="active">التعرف على صورة</a>
+    <a class="{% if title == 'Video Rec.' %}active{% endif %}" href="/video">التعرف بأستخدام الكاميرا</a>
+    <a class="{% if title == 'About' %}active{% else %}{% endif %}" href="/about">حول البرنامج</a>
+    <a href="#">Github</a>
+  </div>
+
+  <div style="" dir="rtl" class="main content">
+    {% block content %}{% endblock %}
+
+  </div>
+
+</body>
+
+</html>
