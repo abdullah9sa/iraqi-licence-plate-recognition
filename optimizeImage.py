@@ -5,6 +5,7 @@ import numpy as np
 from PIL import Image, ImageEnhance
 
 def Opti(img):
+    print("------------- Optimizeing ----------------")
     parameters = ac.Parameters()
 
     # enable HDN for ACNet

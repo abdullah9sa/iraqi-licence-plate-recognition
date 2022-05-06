@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+  <script src="https://kit.fontawesome.com/4d1ba1010c.js" crossorigin="anonymous"></script>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -182,7 +184,7 @@
 </head>
 
 <body style="background-color: rgb(240, 240, 240);">
-  <div class="sidebar" dir="rtl">
+  <div class="sidebar shadow-lg" dir="rtl">
     <div class="container">
       <div class="row icn">
         <div class="col-sm">
@@ -197,10 +199,20 @@
     <!-- <img src="/static/uni.png" alt="university of Mosul" width="50%">
     <img src="/static/engineering.png" alt="university of Mosul" width="50%"> -->
     <br>
-    <a class="{% if title == 'Image Rec.' %}active{% else %}{% endif %}" href="/" id="active">التعرف على صورة</a>
-    <a class="{% if title == 'Video Rec.' %}active{% endif %}" href="/video">التعرف بأستخدام الكاميرا</a>
-    <a class="{% if title == 'About' %}active{% else %}{% endif %}" href="/about">حول البرنامج</a>
-    <a href="#">Github</a>
+    <a class="{% if title == 'Image Rec.' %}active{% else %}{% endif %} rounded-pill" href="/" id="active">
+      <span class="fa-solid fa-images"></span>
+      &#160التعرف بأستخدام صورة
+        <span \class="fa-solid fa-images"></span>
+    </a>
+    <a class="{% if title == 'Video Rec.' %}active{% endif %} rounded-pill" href="/video">
+      <span class="fa-solid fa-video"></span>
+      &#160التعرف بأستخدام الكاميرا</a>
+    <a class="{% if title == 'About' %}active{% else %}{% endif %} rounded-pill" href="/about">
+      <span class="fa-solid fa-circle-info"></span>
+      &#160حول البرنامج</a>
+    <a href="https://github.com/Abdullah-Salih/iraqi-licence-plate-recognition">
+      <span class="fa-brands fa-github rounded-pill"></span>
+      &#160Github</a>
   </div>
 
   <div style="" dir="rtl" class="main content">
@@ -209,5 +221,4 @@
   </div>
 
 </body>
-
 </html>

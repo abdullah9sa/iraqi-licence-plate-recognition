@@ -51,8 +51,11 @@ def AssignWord(wrd):
     return bestMatch
 
 
-def ReadLic(img):
-    img = optimizeImage.Opti(img)
+def ReadLic(img , isOptimize):
+
+    if(isOptimize):
+        img = optimizeImage.Opti(img)
+
     thisdict = {
         "number": "",
         "state": "",

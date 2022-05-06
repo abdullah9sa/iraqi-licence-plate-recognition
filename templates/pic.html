@@ -23,7 +23,10 @@
     </div>
 </form>
 <br>
-<button type="button" class="btn btn-warning shadow-sm w-25 h-auto" onclick="load('/excute')">معالجة</button>
+<button type="button" class="btn btn-warning shadow-sm w-25 h-auto rounded-pill" style="padding: 10px;" onclick="load('/excute')">
+    <span class="fa-solid fa-microchip "></span>
+    <strong style="font-size: large;">&#160معالجة</strong>
+</button>
 <br><br>
 <div class="loader" id="loader"></div>
 <img id="results" class="rounded hid" width="75%" height="75%" src="" style="object-fit: contain;">
@@ -88,7 +91,6 @@
 
         xhr.onreadystatechange = function () {
             var table = document.getElementById("tbody");
-
 
             var child = table.lastElementChild;
             while (child) {
