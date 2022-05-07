@@ -63,7 +63,7 @@ def Detect_Plate(img , isOptimize):
         category_index,
         use_normalized_coordinates=True,
         max_boxes_to_draw=20,
-        min_score_thresh=.5, # Adjust this value to set the minimum probability boxes to be classified as True
+        min_score_thresh=.6, # Adjust this value to set the minimum probability boxes to be classified as True
         agnostic_mode=False)
 
     plt.figure(figsize=IMAGE_SIZE, dpi=200)
@@ -81,7 +81,7 @@ def Detect_Plate(img , isOptimize):
     # get scores to get a threshold
     scores = detections['detection_scores']
     # this is set as a default but feel free to adjust it to your needs
-    min_score_thresh=.5
+    min_score_thresh=.6
 
     allLicData = []
     # iterate over all objects found
