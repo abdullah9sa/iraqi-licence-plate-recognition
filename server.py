@@ -91,4 +91,4 @@ def gen(camera):
         yield b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n--frame\r\n'
 
 
-app.run(host='0.0.0.0', port=81, debug=True)
+app.run(host='0.0.0.0', port=81, debug=False)
